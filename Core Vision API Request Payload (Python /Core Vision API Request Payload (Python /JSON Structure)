@@ -1,0 +1,22 @@
+{
+  "model": "vision-multimodal-engine-v4",
+  "parameters": {
+    "temperature": 0.1,
+    "response_format": { "type": "json_object" }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Analyze the provided image of household or yard debris. Identify every physical item present. For each item, return a JSON object containing: item_name, estimated_quantity, material_composition, structural_state (rigid, flexible, shredded, liquid), and top 3 potential upcycling utility roles based on physical affordances."
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "image_url",
+          "image_url": { "url": "data:image/jpeg;base64,{user_captured_image_bytes}" }
+        }
+      ]
+    }
+  ]
+}
